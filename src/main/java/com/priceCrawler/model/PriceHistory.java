@@ -10,6 +10,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -29,6 +32,8 @@ import lombok.Setter;
 @Table(name = "tab_price_history")
 public class PriceHistory {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cdPriceHistory;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
